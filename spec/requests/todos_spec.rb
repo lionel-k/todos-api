@@ -90,7 +90,8 @@ RSpec.describe 'Todos API', type: :request do
       before { put "/todos/#{todo_id}", params: valid_attributes }
 
       it 'updates the record' do
-        expect(response.body).to be_empty
+        updated_todo = Todo.find(todo_id)
+        expect(updated_todo.title).to match(/Shopping/)
       end
 
       it 'returns status code 204' do
