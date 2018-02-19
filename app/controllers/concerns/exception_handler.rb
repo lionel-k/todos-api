@@ -30,4 +30,3 @@ module ExceptionHandler
     json_response({ message: e.message }, :unauthorized)
   end
 end
-end
